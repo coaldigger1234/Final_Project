@@ -24,7 +24,7 @@ public:
     void changeColor();
     void setNumAsteroid(int number);
     int getNumAsteroid();
-    vector<Asteroid> fragmentation(Asteroid origAsteroid);
+    void fragmentation(vector<Asteroid>& asteroidVec, int asterID);
 private:
     double _velocity;
     double _size;

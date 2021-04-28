@@ -31,7 +31,7 @@ vector<CircleShape> Missile::getMissileVector() {
     return _missileVec;
 }
 
-void Missile::hitsAsteroid(vector<Asteroid>& asteroidVec, int asterInc) {
+void Missile::hitsAsteroid(vector<Asteroid>& asteroidVec, int& asterInc) {
     double missilePosX = _missile.getPosition().x;
     double missilePosY = _missile.getPosition().y;
     double astPosX = asteroidVec.at(asterInc).getAsteroidShape().getPosition().x;
@@ -43,11 +43,12 @@ void Missile::hitsAsteroid(vector<Asteroid>& asteroidVec, int asterInc) {
         if ( (asteroidVec.at(asterInc).getAsteroidShape().getOutlineColor() == Color::White ) && ( _missile.getFillColor() == Color::White ) )  {
             if (distanceShipToAsteroid <= ( _missile.getRadius() + asteroidVec.at(asterInc).getRadius() ) ) {
                 //asteroidVec.at(asterInc).changeColor();
-                asteroidVec.erase(asteroidVec.begin() + asterInc);
                 _missile.setFillColor(Color(0, 0, 0, 0));
                 //asteroid.setNumAsteroid(asteroid.getNumAsteroid() + 1);
-                FragmentationExecution fragmentEvent;
-                fragmentEvent.pushBackAsteroidVec(asteroidVec.at(asterInc), game);
+                asteroidVec.at(asterInc).fragmentation(asteroidVec, asterInc);
+                asteroidVec.erase(asteroidVec.begin() + asterInc);
+                cout << asterInc << endl;
+                asterInc -= 1;
                 //missileVec.pop_back();
             }
         }

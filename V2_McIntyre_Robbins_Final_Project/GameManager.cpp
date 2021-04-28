@@ -34,7 +34,7 @@ int GameManager::startGame() {
     Clock clock;
     Asteroid setAst;
     vector<Player> currPlayerState;
-    int numAsteroid = ( (double)rand() / RAND_MAX * 8 + 3 ) * ( ( WIDTH * HEIGHT ) / ( 920 * 920 ) );
+    int numAsteroid = ( (double)rand() / RAND_MAX * 8 + 3 ) * ( ( WIDTH * HEIGHT ) / ( 640 * 640 ) );
     for (int fillAstVec = 0; fillAstVec < numAsteroid; ++fillAstVec) {
         Asteroid fillerAsteroid;
         asteroidVec.push_back(fillerAsteroid);
@@ -73,16 +73,18 @@ int GameManager::startGame() {
 
         window.clear(Color::Black);
 
+        //Handle Missile/Asteroid collision
         for (int k = 0; k < missileVec.size(); ++k) {
-            for (int asterInc = 0; asterInc < asteroidVec.size(); ++asterInc) {
-                missileVec.at(k).hitsAsteroid(asteroidVec, asterInc);
+            for (int asterID = 0; asterID < asteroidVec.size(); ++asterID) {
+                missileVec.at(k).hitsAsteroid(asteroidVec, asterID);
             }
             window.draw(missileVec.at(k).getShape());
         }
 
+        //Handle Missile/Player collision
         for (int l = 0; l < missileVec.size(); ++l) {
             missileVec.at(l).updateMissile(currPlayerState.at(l));
-            player.collision(asteroidVec.at(l));
+            player.collision(asteroidVec, l);
         }
 
         double time = clock.restart().asMilliseconds();
@@ -96,13 +98,13 @@ int GameManager::startGame() {
 
         for (int j = 0; j < asteroidVec.size(); ++j) {
             asteroidVec.at(j).updateAsteroid(time);
-            player.collision(asteroidVec.at(j));
+            player.collision(asteroidVec, j);
         }
 
         Text livesText;
         livesText.setFont(myFont);
         livesText.setString("Lives Left: " + to_string(player.getLives()));
-        livesText.setCharacterSize(30);
+        livesText.setCharacterSize(40);
         livesText.setFillColor(Color::White);
         window.draw(livesText);
 

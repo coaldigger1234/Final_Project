@@ -67,10 +67,10 @@ RM = "C:\Program Files\JetBrains\CLion 2020.3.1\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\Owner\Downloads\Documents\_School\_Senior_Year\_Spring_2021\CSCI_261\Final_Project\V2_McIntyre_Robbins_Final_Project
+CMAKE_SOURCE_DIR = C:\Users\macge\Desktop\V2_McIntyre_Robbins_Final_Project
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\Owner\Downloads\Documents\_School\_Senior_Year\_Spring_2021\CSCI_261\Final_Project\V2_McIntyre_Robbins_Final_Project\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\macge\Desktop\V2_McIntyre_Robbins_Final_Project\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -99,9 +99,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Owner\Downloads\Documents\_School\_Senior_Year\_Spring_2021\CSCI_261\Final_Project\V2_McIntyre_Robbins_Final_Project\cmake-build-debug\CMakeFiles C:\Users\Owner\Downloads\Documents\_School\_Senior_Year\_Spring_2021\CSCI_261\Final_Project\V2_McIntyre_Robbins_Final_Project\cmake-build-debug\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\macge\Desktop\V2_McIntyre_Robbins_Final_Project\cmake-build-debug\CMakeFiles C:\Users\macge\Desktop\V2_McIntyre_Robbins_Final_Project\cmake-build-debug\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Owner\Downloads\Documents\_School\_Senior_Year\_Spring_2021\CSCI_261\Final_Project\V2_McIntyre_Robbins_Final_Project\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\macge\Desktop\V2_McIntyre_Robbins_Final_Project\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target

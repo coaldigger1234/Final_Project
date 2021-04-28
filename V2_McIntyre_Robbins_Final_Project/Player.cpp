@@ -108,27 +108,43 @@ void Player::onEvent(const Event &event) {
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
         rotMagnitude = 1;
     }
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
+        transMagnitude = 1;
+    }
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
+        transMagnitude = -1;
+    }
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
+        rotMagnitude = -1;
+    }
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
+        rotMagnitude = 1;
+    }
 }
 
-void Player::collision(Asteroid deadlyAsteroid) {
+void Player::collision(vector<Asteroid>& asteroidVec, int asterID) {
     double shipPosX = ship.getPosition().x;
     double shipPosY = ship.getPosition().y;
-    double astPosX = deadlyAsteroid.getAsteroidShape().getPosition().x;
-    double astPosY = deadlyAsteroid.getAsteroidShape().getPosition().y;
+    double astPosX = asteroidVec.at(asterID).getAsteroidShape().getPosition().x;
+    double astPosY = asteroidVec.at(asterID).getAsteroidShape().getPosition().y;
     GameManager game;
 
     double distanceShipToAsteroid = sqrt( pow( shipPosX - astPosX , 2 ) + pow( shipPosY - astPosY , 2 ));
     if ( ( shipPosX > 0 || shipPosX < game.getDimensions().x ) && ( shipPosY > 0 || shipPosY < game.getDimensions().y )) {
-        if (deadlyAsteroid.getAsteroidShape().getOutlineColor() == Color::White) {
-            if (distanceShipToAsteroid <= ( radius + deadlyAsteroid.getRadius() ) ) {
-                initiateCol = true;
+        if (asteroidVec.at(asterID).getAsteroidShape().getOutlineColor() == Color::White) {
+            if (distanceShipToAsteroid <= ( radius + asteroidVec.at(asterID).getRadius() ) ) {
+                //initiateCol = true;
+                asteroidVec.at(asterID).fragmentation(asteroidVec, asterID);
+                if(lives > 0) {
+                    lives--;
+                }
             }
         }
     }
-    if (( distanceShipToAsteroid > ( radius + deadlyAsteroid.getRadius() ) ) && initiateCol) {
+    /*if (( distanceShipToAsteroid > ( radius + deadlyAsteroid.getRadius() ) ) && initiateCol) {
         initiateCol = false;
         --lives;
-    }
+    }*/
 }
 
 int Player::getLives() {

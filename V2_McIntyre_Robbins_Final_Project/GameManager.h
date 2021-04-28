@@ -17,8 +17,8 @@ public:
     GameManager();
     int startGame();
     void quit();
-    const int WIDTH = 2000;
-    const int HEIGHT = 1500;
+    const int WIDTH = 1080;
+    const int HEIGHT = 720;
     Vector2f getDimensions();
     vector<Asteroid> getAsteroidVec();
     void setAsteroidVec(vector<Asteroid> newAsteroidVec);

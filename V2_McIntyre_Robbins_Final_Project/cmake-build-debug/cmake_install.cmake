@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/Owner/Downloads/Documents/_School/_Senior_Year/_Spring_2021/CSCI_261/Final_Project/V2_McIntyre_Robbins_Final_Project
+# Install script for directory: C:/Users/macge/Desktop/V2_McIntyre_Robbins_Final_Project
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/Owner/Downloads/Documents/_School/_Senior_Year/_Spring_2021/CSCI_261/Final_Project/V2_McIntyre_Robbins_Final_Project/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/macge/Desktop/V2_McIntyre_Robbins_Final_Project/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

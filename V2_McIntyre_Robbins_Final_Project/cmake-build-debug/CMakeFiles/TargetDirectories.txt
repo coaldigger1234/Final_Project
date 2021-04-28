@@ -1,3 +1,3 @@
-C:/Users/Owner/Downloads/Documents/_School/_Senior_Year/_Spring_2021/CSCI_261/Final_Project/V2_McIntyre_Robbins_Final_Project/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/Owner/Downloads/Documents/_School/_Senior_Year/_Spring_2021/CSCI_261/Final_Project/V2_McIntyre_Robbins_Final_Project/cmake-build-debug/CMakeFiles/SFML_Template.dir
-C:/Users/Owner/Downloads/Documents/_School/_Senior_Year/_Spring_2021/CSCI_261/Final_Project/V2_McIntyre_Robbins_Final_Project/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/macge/Desktop/V2_McIntyre_Robbins_Final_Project/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/macge/Desktop/V2_McIntyre_Robbins_Final_Project/cmake-build-debug/CMakeFiles/SFML_Template.dir
+C:/Users/macge/Desktop/V2_McIntyre_Robbins_Final_Project/cmake-build-debug/CMakeFiles/rebuild_cache.dir

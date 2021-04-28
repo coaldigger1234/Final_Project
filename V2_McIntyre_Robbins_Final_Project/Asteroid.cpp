@@ -50,7 +50,7 @@ void Asteroid::createAsteroid() {
     asteroidShape.setPoint(5, Vector2f(-20.0f * _size, -20.0f * _size));
     asteroidShape.setPoint(6, Vector2f(-40.0f * _size, 0.0f * _size));
 
-    cout << _size << endl;
+    //cout << _size << endl;
 
 }
 
@@ -138,13 +138,14 @@ void Asteroid::changeColor() {
 //    return numAsteroid;
 //}
 
-vector<Asteroid> Asteroid::fragmentation(Asteroid origAsteroid) {
+void Asteroid::fragmentation(vector<Asteroid>& asteroidVec, int asterID) {
     vector<Asteroid> newAsteroids;
-    Asteroid asteroid1(.5 * origAsteroid._velocity, .5 * origAsteroid._size);
-    Asteroid asteroid2(.5 * origAsteroid._velocity, .5 * origAsteroid._size);
+    Asteroid asteroid1(.5 * asteroidVec.at(asterID)._velocity, .5 * asteroidVec.at(asterID)._size);
+    Asteroid asteroid2(.5 * asteroidVec.at(asterID)._velocity, .5 * asteroidVec.at(asterID)._size);
     asteroid1.getAsteroidShape().setOutlineColor(Color::White);
     asteroid2.getAsteroidShape().setOutlineColor(Color::White);
-    double rotation = origAsteroid.getAsteroidShape().getRotation();
+    double rotation = asteroidVec.at(asterID).getAsteroidShape().getRotation();
+    Vector2f position = asteroidVec.at(asterID).getAsteroidShape().getPosition();
 
     if (rotation > 270) {
         asteroid1.getAsteroidShape().setRotation(rotation - 270);
@@ -157,8 +158,12 @@ vector<Asteroid> Asteroid::fragmentation(Asteroid origAsteroid) {
         asteroid2.getAsteroidShape().setRotation(rotation - 90);
     }
 
-    newAsteroids.push_back(asteroid1);
-    newAsteroids.push_back(asteroid2);
+    asteroid1.getAsteroidShape().setPosition(position);
+    asteroid2.getAsteroidShape().setPosition(position);
 
-    return newAsteroids;
+    asteroidVec.push_back(asteroid1);
+    asteroidVec.push_back(asteroid2);
+
+    asteroidVec.erase(asteroidVec.begin() + asterID);
+
 }

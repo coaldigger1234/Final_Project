@@ -62,10 +62,10 @@ RM = "C:\Program Files\JetBrains\CLion 2020.3.1\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\Owner\Downloads\Documents\_School\_Senior_Year\_Spring_2021\CSCI_261\Final_Project\V2_McIntyre_Robbins_Final_Project
+CMAKE_SOURCE_DIR = C:\Users\macge\Desktop\V2_McIntyre_Robbins_Final_Project
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\Owner\Downloads\Documents\_School\_Senior_Year\_Spring_2021\CSCI_261\Final_Project\V2_McIntyre_Robbins_Final_Project\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\macge\Desktop\V2_McIntyre_Robbins_Final_Project\cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/SFML_Template.dir/depend.make
@@ -79,86 +79,86 @@ include CMakeFiles/SFML_Template.dir/flags.make
 CMakeFiles/SFML_Template.dir/main.cpp.obj: CMakeFiles/SFML_Template.dir/flags.make
 CMakeFiles/SFML_Template.dir/main.cpp.obj: CMakeFiles/SFML_Template.dir/includes_CXX.rsp
 CMakeFiles/SFML_Template.dir/main.cpp.obj: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Owner\Downloads\Documents\_School\_Senior_Year\_Spring_2021\CSCI_261\Final_Project\V2_McIntyre_Robbins_Final_Project\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/SFML_Template.dir/main.cpp.obj"
-	C:\mingw64\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\SFML_Template.dir\main.cpp.obj -c C:\Users\Owner\Downloads\Documents\_School\_Senior_Year\_Spring_2021\CSCI_261\Final_Project\V2_McIntyre_Robbins_Final_Project\main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\macge\Desktop\V2_McIntyre_Robbins_Final_Project\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/SFML_Template.dir/main.cpp.obj"
+	C:\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\SFML_Template.dir\main.cpp.obj -c C:\Users\macge\Desktop\V2_McIntyre_Robbins_Final_Project\main.cpp
 
 CMakeFiles/SFML_Template.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SFML_Template.dir/main.cpp.i"
-	C:\mingw64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Owner\Downloads\Documents\_School\_Senior_Year\_Spring_2021\CSCI_261\Final_Project\V2_McIntyre_Robbins_Final_Project\main.cpp > CMakeFiles\SFML_Template.dir\main.cpp.i
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\macge\Desktop\V2_McIntyre_Robbins_Final_Project\main.cpp > CMakeFiles\SFML_Template.dir\main.cpp.i
 
 CMakeFiles/SFML_Template.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SFML_Template.dir/main.cpp.s"
-	C:\mingw64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Owner\Downloads\Documents\_School\_Senior_Year\_Spring_2021\CSCI_261\Final_Project\V2_McIntyre_Robbins_Final_Project\main.cpp -o CMakeFiles\SFML_Template.dir\main.cpp.s
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\macge\Desktop\V2_McIntyre_Robbins_Final_Project\main.cpp -o CMakeFiles\SFML_Template.dir\main.cpp.s
 
 CMakeFiles/SFML_Template.dir/Asteroid.cpp.obj: CMakeFiles/SFML_Template.dir/flags.make
 CMakeFiles/SFML_Template.dir/Asteroid.cpp.obj: CMakeFiles/SFML_Template.dir/includes_CXX.rsp
 CMakeFiles/SFML_Template.dir/Asteroid.cpp.obj: ../Asteroid.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Owner\Downloads\Documents\_School\_Senior_Year\_Spring_2021\CSCI_261\Final_Project\V2_McIntyre_Robbins_Final_Project\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/SFML_Template.dir/Asteroid.cpp.obj"
-	C:\mingw64\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\SFML_Template.dir\Asteroid.cpp.obj -c C:\Users\Owner\Downloads\Documents\_School\_Senior_Year\_Spring_2021\CSCI_261\Final_Project\V2_McIntyre_Robbins_Final_Project\Asteroid.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\macge\Desktop\V2_McIntyre_Robbins_Final_Project\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/SFML_Template.dir/Asteroid.cpp.obj"
+	C:\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\SFML_Template.dir\Asteroid.cpp.obj -c C:\Users\macge\Desktop\V2_McIntyre_Robbins_Final_Project\Asteroid.cpp
 
 CMakeFiles/SFML_Template.dir/Asteroid.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SFML_Template.dir/Asteroid.cpp.i"
-	C:\mingw64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Owner\Downloads\Documents\_School\_Senior_Year\_Spring_2021\CSCI_261\Final_Project\V2_McIntyre_Robbins_Final_Project\Asteroid.cpp > CMakeFiles\SFML_Template.dir\Asteroid.cpp.i
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\macge\Desktop\V2_McIntyre_Robbins_Final_Project\Asteroid.cpp > CMakeFiles\SFML_Template.dir\Asteroid.cpp.i
 
 CMakeFiles/SFML_Template.dir/Asteroid.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SFML_Template.dir/Asteroid.cpp.s"
-	C:\mingw64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Owner\Downloads\Documents\_School\_Senior_Year\_Spring_2021\CSCI_261\Final_Project\V2_McIntyre_Robbins_Final_Project\Asteroid.cpp -o CMakeFiles\SFML_Template.dir\Asteroid.cpp.s
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\macge\Desktop\V2_McIntyre_Robbins_Final_Project\Asteroid.cpp -o CMakeFiles\SFML_Template.dir\Asteroid.cpp.s
 
 CMakeFiles/SFML_Template.dir/GameManager.cpp.obj: CMakeFiles/SFML_Template.dir/flags.make
 CMakeFiles/SFML_Template.dir/GameManager.cpp.obj: CMakeFiles/SFML_Template.dir/includes_CXX.rsp
 CMakeFiles/SFML_Template.dir/GameManager.cpp.obj: ../GameManager.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Owner\Downloads\Documents\_School\_Senior_Year\_Spring_2021\CSCI_261\Final_Project\V2_McIntyre_Robbins_Final_Project\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/SFML_Template.dir/GameManager.cpp.obj"
-	C:\mingw64\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\SFML_Template.dir\GameManager.cpp.obj -c C:\Users\Owner\Downloads\Documents\_School\_Senior_Year\_Spring_2021\CSCI_261\Final_Project\V2_McIntyre_Robbins_Final_Project\GameManager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\macge\Desktop\V2_McIntyre_Robbins_Final_Project\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/SFML_Template.dir/GameManager.cpp.obj"
+	C:\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\SFML_Template.dir\GameManager.cpp.obj -c C:\Users\macge\Desktop\V2_McIntyre_Robbins_Final_Project\GameManager.cpp
 
 CMakeFiles/SFML_Template.dir/GameManager.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SFML_Template.dir/GameManager.cpp.i"
-	C:\mingw64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Owner\Downloads\Documents\_School\_Senior_Year\_Spring_2021\CSCI_261\Final_Project\V2_McIntyre_Robbins_Final_Project\GameManager.cpp > CMakeFiles\SFML_Template.dir\GameManager.cpp.i
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\macge\Desktop\V2_McIntyre_Robbins_Final_Project\GameManager.cpp > CMakeFiles\SFML_Template.dir\GameManager.cpp.i
 
 CMakeFiles/SFML_Template.dir/GameManager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SFML_Template.dir/GameManager.cpp.s"
-	C:\mingw64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Owner\Downloads\Documents\_School\_Senior_Year\_Spring_2021\CSCI_261\Final_Project\V2_McIntyre_Robbins_Final_Project\GameManager.cpp -o CMakeFiles\SFML_Template.dir\GameManager.cpp.s
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\macge\Desktop\V2_McIntyre_Robbins_Final_Project\GameManager.cpp -o CMakeFiles\SFML_Template.dir\GameManager.cpp.s
 
 CMakeFiles/SFML_Template.dir/Player.cpp.obj: CMakeFiles/SFML_Template.dir/flags.make
 CMakeFiles/SFML_Template.dir/Player.cpp.obj: CMakeFiles/SFML_Template.dir/includes_CXX.rsp
 CMakeFiles/SFML_Template.dir/Player.cpp.obj: ../Player.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Owner\Downloads\Documents\_School\_Senior_Year\_Spring_2021\CSCI_261\Final_Project\V2_McIntyre_Robbins_Final_Project\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/SFML_Template.dir/Player.cpp.obj"
-	C:\mingw64\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\SFML_Template.dir\Player.cpp.obj -c C:\Users\Owner\Downloads\Documents\_School\_Senior_Year\_Spring_2021\CSCI_261\Final_Project\V2_McIntyre_Robbins_Final_Project\Player.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\macge\Desktop\V2_McIntyre_Robbins_Final_Project\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/SFML_Template.dir/Player.cpp.obj"
+	C:\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\SFML_Template.dir\Player.cpp.obj -c C:\Users\macge\Desktop\V2_McIntyre_Robbins_Final_Project\Player.cpp
 
 CMakeFiles/SFML_Template.dir/Player.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SFML_Template.dir/Player.cpp.i"
-	C:\mingw64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Owner\Downloads\Documents\_School\_Senior_Year\_Spring_2021\CSCI_261\Final_Project\V2_McIntyre_Robbins_Final_Project\Player.cpp > CMakeFiles\SFML_Template.dir\Player.cpp.i
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\macge\Desktop\V2_McIntyre_Robbins_Final_Project\Player.cpp > CMakeFiles\SFML_Template.dir\Player.cpp.i
 
 CMakeFiles/SFML_Template.dir/Player.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SFML_Template.dir/Player.cpp.s"
-	C:\mingw64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Owner\Downloads\Documents\_School\_Senior_Year\_Spring_2021\CSCI_261\Final_Project\V2_McIntyre_Robbins_Final_Project\Player.cpp -o CMakeFiles\SFML_Template.dir\Player.cpp.s
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\macge\Desktop\V2_McIntyre_Robbins_Final_Project\Player.cpp -o CMakeFiles\SFML_Template.dir\Player.cpp.s
 
 CMakeFiles/SFML_Template.dir/Missile.cpp.obj: CMakeFiles/SFML_Template.dir/flags.make
 CMakeFiles/SFML_Template.dir/Missile.cpp.obj: CMakeFiles/SFML_Template.dir/includes_CXX.rsp
 CMakeFiles/SFML_Template.dir/Missile.cpp.obj: ../Missile.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Owner\Downloads\Documents\_School\_Senior_Year\_Spring_2021\CSCI_261\Final_Project\V2_McIntyre_Robbins_Final_Project\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/SFML_Template.dir/Missile.cpp.obj"
-	C:\mingw64\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\SFML_Template.dir\Missile.cpp.obj -c C:\Users\Owner\Downloads\Documents\_School\_Senior_Year\_Spring_2021\CSCI_261\Final_Project\V2_McIntyre_Robbins_Final_Project\Missile.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\macge\Desktop\V2_McIntyre_Robbins_Final_Project\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/SFML_Template.dir/Missile.cpp.obj"
+	C:\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\SFML_Template.dir\Missile.cpp.obj -c C:\Users\macge\Desktop\V2_McIntyre_Robbins_Final_Project\Missile.cpp
 
 CMakeFiles/SFML_Template.dir/Missile.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SFML_Template.dir/Missile.cpp.i"
-	C:\mingw64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Owner\Downloads\Documents\_School\_Senior_Year\_Spring_2021\CSCI_261\Final_Project\V2_McIntyre_Robbins_Final_Project\Missile.cpp > CMakeFiles\SFML_Template.dir\Missile.cpp.i
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\macge\Desktop\V2_McIntyre_Robbins_Final_Project\Missile.cpp > CMakeFiles\SFML_Template.dir\Missile.cpp.i
 
 CMakeFiles/SFML_Template.dir/Missile.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SFML_Template.dir/Missile.cpp.s"
-	C:\mingw64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Owner\Downloads\Documents\_School\_Senior_Year\_Spring_2021\CSCI_261\Final_Project\V2_McIntyre_Robbins_Final_Project\Missile.cpp -o CMakeFiles\SFML_Template.dir\Missile.cpp.s
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\macge\Desktop\V2_McIntyre_Robbins_Final_Project\Missile.cpp -o CMakeFiles\SFML_Template.dir\Missile.cpp.s
 
 CMakeFiles/SFML_Template.dir/FragmentationExecution.cpp.obj: CMakeFiles/SFML_Template.dir/flags.make
 CMakeFiles/SFML_Template.dir/FragmentationExecution.cpp.obj: CMakeFiles/SFML_Template.dir/includes_CXX.rsp
 CMakeFiles/SFML_Template.dir/FragmentationExecution.cpp.obj: ../FragmentationExecution.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Owner\Downloads\Documents\_School\_Senior_Year\_Spring_2021\CSCI_261\Final_Project\V2_McIntyre_Robbins_Final_Project\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/SFML_Template.dir/FragmentationExecution.cpp.obj"
-	C:\mingw64\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\SFML_Template.dir\FragmentationExecution.cpp.obj -c C:\Users\Owner\Downloads\Documents\_School\_Senior_Year\_Spring_2021\CSCI_261\Final_Project\V2_McIntyre_Robbins_Final_Project\FragmentationExecution.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\macge\Desktop\V2_McIntyre_Robbins_Final_Project\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/SFML_Template.dir/FragmentationExecution.cpp.obj"
+	C:\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\SFML_Template.dir\FragmentationExecution.cpp.obj -c C:\Users\macge\Desktop\V2_McIntyre_Robbins_Final_Project\FragmentationExecution.cpp
 
 CMakeFiles/SFML_Template.dir/FragmentationExecution.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SFML_Template.dir/FragmentationExecution.cpp.i"
-	C:\mingw64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Owner\Downloads\Documents\_School\_Senior_Year\_Spring_2021\CSCI_261\Final_Project\V2_McIntyre_Robbins_Final_Project\FragmentationExecution.cpp > CMakeFiles\SFML_Template.dir\FragmentationExecution.cpp.i
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\macge\Desktop\V2_McIntyre_Robbins_Final_Project\FragmentationExecution.cpp > CMakeFiles\SFML_Template.dir\FragmentationExecution.cpp.i
 
 CMakeFiles/SFML_Template.dir/FragmentationExecution.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SFML_Template.dir/FragmentationExecution.cpp.s"
-	C:\mingw64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Owner\Downloads\Documents\_School\_Senior_Year\_Spring_2021\CSCI_261\Final_Project\V2_McIntyre_Robbins_Final_Project\FragmentationExecution.cpp -o CMakeFiles\SFML_Template.dir\FragmentationExecution.cpp.s
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\macge\Desktop\V2_McIntyre_Robbins_Final_Project\FragmentationExecution.cpp -o CMakeFiles\SFML_Template.dir\FragmentationExecution.cpp.s
 
 # Object files for target SFML_Template
 SFML_Template_OBJECTS = \
@@ -182,7 +182,7 @@ SFML_Template.exe: CMakeFiles/SFML_Template.dir/build.make
 SFML_Template.exe: CMakeFiles/SFML_Template.dir/linklibs.rsp
 SFML_Template.exe: CMakeFiles/SFML_Template.dir/objects1.rsp
 SFML_Template.exe: CMakeFiles/SFML_Template.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Owner\Downloads\Documents\_School\_Senior_Year\_Spring_2021\CSCI_261\Final_Project\V2_McIntyre_Robbins_Final_Project\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable SFML_Template.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\macge\Desktop\V2_McIntyre_Robbins_Final_Project\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable SFML_Template.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\SFML_Template.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -195,6 +195,6 @@ CMakeFiles/SFML_Template.dir/clean:
 .PHONY : CMakeFiles/SFML_Template.dir/clean
 
 CMakeFiles/SFML_Template.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\Owner\Downloads\Documents\_School\_Senior_Year\_Spring_2021\CSCI_261\Final_Project\V2_McIntyre_Robbins_Final_Project C:\Users\Owner\Downloads\Documents\_School\_Senior_Year\_Spring_2021\CSCI_261\Final_Project\V2_McIntyre_Robbins_Final_Project C:\Users\Owner\Downloads\Documents\_School\_Senior_Year\_Spring_2021\CSCI_261\Final_Project\V2_McIntyre_Robbins_Final_Project\cmake-build-debug C:\Users\Owner\Downloads\Documents\_School\_Senior_Year\_Spring_2021\CSCI_261\Final_Project\V2_McIntyre_Robbins_Final_Project\cmake-build-debug C:\Users\Owner\Downloads\Documents\_School\_Senior_Year\_Spring_2021\CSCI_261\Final_Project\V2_McIntyre_Robbins_Final_Project\cmake-build-debug\CMakeFiles\SFML_Template.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\macge\Desktop\V2_McIntyre_Robbins_Final_Project C:\Users\macge\Desktop\V2_McIntyre_Robbins_Final_Project C:\Users\macge\Desktop\V2_McIntyre_Robbins_Final_Project\cmake-build-debug C:\Users\macge\Desktop\V2_McIntyre_Robbins_Final_Project\cmake-build-debug C:\Users\macge\Desktop\V2_McIntyre_Robbins_Final_Project\cmake-build-debug\CMakeFiles\SFML_Template.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/SFML_Template.dir/depend
 

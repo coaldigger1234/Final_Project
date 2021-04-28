@@ -18,7 +18,7 @@ public:
     void draw(RenderTarget& target, RenderStates states) const;
     void onEvent(const Event& event);
     int getLives();
-    void collision(Asteroid deadlyAsteroid);
+    void collision(vector<Asteroid>& asteroidVec, int asterID);
     ConvexShape getShape();
     Vector2f getSpeed();
     Vector2f getMagnitude();
