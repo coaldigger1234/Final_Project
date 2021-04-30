@@ -17,6 +17,8 @@ GameManager.h
 C:/Users/macge/Desktop/V2_McIntyre_Robbins_Final_Project/GameManager.h
 iostream
 -
+fstream
+-
 random
 -
 ctime

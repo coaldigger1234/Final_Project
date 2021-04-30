@@ -24,8 +24,11 @@ public:
     void setAsteroidVec(vector<Asteroid> newAsteroidVec);
 private:
     void drawWindow();
+    int highscore;
     RenderWindow window;
     bool running;
+    bool isAlive;
+    bool hasWon;
     vector<Asteroid> asteroidVec;
 
 };

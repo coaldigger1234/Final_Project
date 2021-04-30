@@ -2,7 +2,8 @@
 // Created by Owner on 4/19/2021.
 //
 #include "GameManager.h"
-#include <iostream>                             // for standard input/output
+#include <iostream> // for standard input/output
+#include <fstream>
 using namespace std;                            // using the standard namespace
 #include <random>
 #include <ctime>
@@ -15,10 +16,10 @@ using namespace std;                            // using the standard namespace
 
 using namespace sf;
 
-
-
 GameManager::GameManager() {
     running = true;
+    hasWon = false;
+    isAlive = true;
 }
 
 Vector2f GameManager::getDimensions() {
@@ -36,6 +37,20 @@ int GameManager::startGame() {
     Asteroid setAst;
     vector<Player> currPlayerState;
     Font myFont;
+
+    ifstream inFS("score.txt");
+
+    if(inFS.fail()){
+        ofstream outFS("score.txt");
+        cout << "No file found. File created" << endl;
+        outFS << 0;
+        outFS.close();
+        highscore = 0;
+    }
+
+    inFS >> highscore;
+    inFS.close();
+
     int numAsteroid = ( (double)rand() / RAND_MAX * 8 + 3 ) * ( ( WIDTH * HEIGHT ) / ( 640 * 640 ) );
 
     Asteroid placeholderAst;
@@ -49,36 +64,56 @@ int GameManager::startGame() {
         asteroidVec.push_back(fillerAsteroid);
     }
 
-    while(running){
+    while(running) {
 
         if (!myFont.loadFromFile("arial.ttf")) {
             cerr << "An error has occurred" << endl;
             return -1;
         }
+
         Event event;
-        while( window.pollEvent(event) ) {      // ask the window if any events occurred
-            if( event.type == Event::Closed ) { // if event type is a closed event
+        while (window.pollEvent(event)) {      // ask the window if any events occurred
+            if (event.type == Event::Closed) { // if event type is a closed event
                 // i.e. they clicked the X on the window
-                window.close();                 // then close our window
+                if(hasWon) {
+                    ofstream outFS("score.txt");
+                    if(outFS.fail()){
+                        return -1;
+                    }
+                    outFS << highscore + 1;
+                    outFS.close();// then close our window
+                }
+                if(!isAlive){
+                    ofstream outFS("score.txt");
+                    if(outFS.fail()){
+                        return -1;
+                    }
+                    outFS << 0;
+                    outFS.close();// then close our window
+                }
+                window.close();
                 running = false;
             }
-            if ( event.type == Event::KeyPressed) {
-                switch (event.key.code) {
-                    case sf::Keyboard::Space:
-                        if (missileVec.size() > 2) {
-                            missileVec.erase(missileVec.begin() + 0);
-                            currPlayerState.erase(currPlayerState.begin() + 0);
-                        }
-                        Missile currMissile;
-                        currPlayerState.push_back(player);
-                        missileVec.push_back(currMissile);
-                        missileVec.at(missileVec.size() - 1).isShot(player);
-                        break;
+            if (isAlive) {
+                if (event.type == Event::KeyPressed) {
+                    switch (event.key.code) {
+                        case sf::Keyboard::Space:
+                            if (missileVec.size() > 2) {
+                                missileVec.erase(missileVec.begin() + 0);
+                                currPlayerState.erase(currPlayerState.begin() + 0);
+                            }
+                            Missile currMissile;
+                            currPlayerState.push_back(player);
+                            missileVec.push_back(currMissile);
+                            missileVec.at(missileVec.size() - 1).isShot(player);
+                            break;
+                    }
                 }
             }
             player.onEvent(event);
         }
 
+        if(isAlive) {
         window.clear(Color::Black);
 
         //Handle Missile/Asteroid collision
@@ -118,44 +153,38 @@ int GameManager::startGame() {
         window.draw(livesText);
 
         Text winText;
-        winText.setPosition(Vector2f(WIDTH/3,HEIGHT/3));
+        winText.setPosition(Vector2f(WIDTH / 3, HEIGHT / 3));
         winText.setFont(myFont);
         winText.setString("You Win!");
         winText.setCharacterSize(80);
         winText.setFillColor(Color::White);
 
-        if(asteroidVec.size()-3 == 0) {
+        if (asteroidVec.size() - 3 == 0) {
             window.draw(winText);
+            hasWon = true;
         }
 
         window.display();
 
-        if(player.getLives() <= 0) {
-            running = false;
+        if (player.getLives() <= 0) {
+            isAlive = false;
         }
-    }
 
-    while(!running){
-        Event event;
-        while( window.pollEvent(event) ) {      // ask the window if any events occurred
-            if (event.type == Event::Closed) { // if event type is a closed event
-                // i.e. they clicked the X on the window
-                window.close();             // then close our window
-                running = false;
-            }
+    } else {
+
+            window.clear();
+
+            Text loseText;
+            loseText.setPosition(Vector2f(WIDTH/3,HEIGHT/3));
+            loseText.setFont(myFont);
+            loseText.setString("Game Over!");
+            loseText.setCharacterSize(80);
+            loseText.setFillColor(Color::White);
+
+            window.draw(loseText);
+
+            window.display();
         }
-        window.clear();
-
-        Text loseText;
-        loseText.setPosition(Vector2f(WIDTH/3,HEIGHT/3));
-        loseText.setFont(myFont);
-        loseText.setString("Game Over!");
-        loseText.setCharacterSize(80);
-        loseText.setFillColor(Color::White);
-
-        window.draw(loseText);
-
-        window.display();
     }
 };
 
