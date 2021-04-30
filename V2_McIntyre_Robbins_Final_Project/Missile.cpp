@@ -31,24 +31,21 @@ vector<CircleShape> Missile::getMissileVector() {
     return _missileVec;
 }
 
-void Missile::hitsAsteroid(vector<Asteroid>& asteroidVec, int& asterInc) {
+void Missile::hitsAsteroid(vector<Asteroid>& asteroidVec, int asterID) {
     double missilePosX = _missile.getPosition().x;
     double missilePosY = _missile.getPosition().y;
-    double astPosX = asteroidVec.at(asterInc).getAsteroidShape().getPosition().x;
-    double astPosY = asteroidVec.at(asterInc).getAsteroidShape().getPosition().y;
+    double astPosX = asteroidVec.at(asterID).getAsteroidShape().getPosition().x;
+    double astPosY = asteroidVec.at(asterID).getAsteroidShape().getPosition().y;
     GameManager game;
 
-    double distanceShipToAsteroid = sqrt( pow( missilePosX - astPosX, 2 ) + pow( missilePosY - astPosY , 2 ));
+    double distanceMissileToAsteroid = sqrt( pow( missilePosX - astPosX, 2 ) + pow( missilePosY - astPosY , 2 ));
     if ( ( missilePosX > 0 || missilePosX < game.getDimensions().x ) && ( missilePosY > 0 || missilePosY < game.getDimensions().y )) {
-        if ( (asteroidVec.at(asterInc).getAsteroidShape().getOutlineColor() == Color::White ) && ( _missile.getFillColor() == Color::White ) )  {
-            if (distanceShipToAsteroid <= ( _missile.getRadius() + asteroidVec.at(asterInc).getRadius() ) ) {
+        if ( (asteroidVec.at(asterID).getAsteroidShape().getOutlineColor() == Color::White ) && ( _missile.getFillColor() == Color::White ) )  {
+            if (distanceMissileToAsteroid <= ( _missile.getRadius() + asteroidVec.at(asterID).getRadius() ) ) {
                 //asteroidVec.at(asterInc).changeColor();
                 _missile.setFillColor(Color(0, 0, 0, 0));
                 //asteroid.setNumAsteroid(asteroid.getNumAsteroid() + 1);
-                asteroidVec.at(asterInc).fragmentation(asteroidVec, asterInc);
-                asteroidVec.erase(asteroidVec.begin() + asterInc);
-                cout << asterInc << endl;
-                asterInc -= 1;
+                asteroidVec.at(asterID).fragmentation(asteroidVec, asterID);
                 //missileVec.pop_back();
             }
         }

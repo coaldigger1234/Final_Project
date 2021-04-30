@@ -16,18 +16,25 @@ Asteroid::Asteroid() {
     createAsteroid();
 }
 
-Asteroid::Asteroid(double velocity, int size) {
-    if (velocity >= 1 && velocity <= 9) {
-        _velocity = velocity + ( 2 * (double)rand() / RAND_MAX - .5);
-    } else if (velocity < 1) {
-        _velocity = velocity + ( (double)rand() / RAND_MAX / 2 );
-    } else {
-        _velocity = velocity - ( (double)rand() / RAND_MAX / 2 );
-    }
-
+Asteroid::Asteroid(double velocity, int size, double rotation, Vector2f position ) {
+    GameManager game;
+    _velocity = velocity;
     _size = size;
-
-    createAsteroid();
+    _radius = 40 * _size;
+    asteroidShape.setRotation(rotation);
+    _angle = asteroidShape.getRotation();
+    asteroidShape.setPosition(position);
+    asteroidShape.setFillColor(Color(0, 0, 0, 0));
+    asteroidShape.setOutlineColor(Color(255, 255, 255));
+    asteroidShape.setOutlineThickness(2);
+    asteroidShape.setPointCount(7);
+    asteroidShape.setPoint(0, Vector2f(-40.0f * _size, 20.0f * _size));
+    asteroidShape.setPoint(1, Vector2f(30.0f * _size, 30.0f * _size));
+    asteroidShape.setPoint(2, Vector2f(20.0f * _size, 0.0f * _size));
+    asteroidShape.setPoint(3, Vector2f(30.0f * _size, -30.0f * _size));
+    asteroidShape.setPoint(4, Vector2f(-30.0f * _size, -40.0f * _size));
+    asteroidShape.setPoint(5, Vector2f(-20.0f * _size, -20.0f * _size));
+    asteroidShape.setPoint(6, Vector2f(-40.0f * _size, 0.0f * _size));
 }
 
 void Asteroid::createAsteroid() {
@@ -66,29 +73,29 @@ void Asteroid::updateAsteroid(double frametime) {
 
     _position = asteroidShape.getPosition();
 
-    if (_position.x < 0 - 2 * _radius) {
-        _position.x = game.getDimensions().x +  2 * _radius;
+    if (_position.x < 0 - _radius) {
+        _position.x = game.getDimensions().x +  _radius;
         if (asteroidShape.getOutlineColor() == Color(0, 255, 0, 0)) {
             asteroidShape.setOutlineColor(Color::White);
         }
         randomVelAndDir();
     }
-    if (_position.x > game.getDimensions().x + 2 * _radius) {
-        _position.x = 0 - 2 * _radius;
+    if (_position.x > game.getDimensions().x + _radius) {
+        _position.x = 0 - _radius;
         if (asteroidShape.getOutlineColor() == Color(0, 255, 0, 0)) {
             asteroidShape.setOutlineColor(Color::White);
         }
         randomVelAndDir();
     }
-    if (_position.y < 0 - 2 * _radius) {
-        _position.y = game.getDimensions().y +  2 * _radius;
+    if (_position.y < 0 - _radius) {
+        _position.y = game.getDimensions().y +  _radius;
         if (asteroidShape.getOutlineColor() == Color(0, 255, 0, 0)) {
             asteroidShape.setOutlineColor(Color::White);
         }
         randomVelAndDir();
     }
-    if (_position.y > game.getDimensions().y + 2 * _radius) {
-        _position.y = 0 - 2 * _radius;
+    if (_position.y > game.getDimensions().y + _radius) {
+        _position.y = 0 - _radius;
         if (asteroidShape.getOutlineColor() == Color(0, 255, 0, 0)) {
             asteroidShape.setOutlineColor(Color::White);
         }
@@ -127,7 +134,7 @@ double Asteroid::getRadius() {
 }
 
 void Asteroid::changeColor() {
-    asteroidShape.setOutlineColor(Color(0, 0, 0, 0));
+    asteroidShape.setOutlineColor(Color(0, 0, 0,0));
 }
 
 //void Asteroid::setNumAsteroid(int number) {
@@ -139,31 +146,32 @@ void Asteroid::changeColor() {
 //}
 
 void Asteroid::fragmentation(vector<Asteroid>& asteroidVec, int asterID) {
-    vector<Asteroid> newAsteroids;
-    Asteroid asteroid1(.5 * asteroidVec.at(asterID)._velocity, .5 * asteroidVec.at(asterID)._size);
-    Asteroid asteroid2(.5 * asteroidVec.at(asterID)._velocity, .5 * asteroidVec.at(asterID)._size);
-    asteroid1.getAsteroidShape().setOutlineColor(Color::White);
-    asteroid2.getAsteroidShape().setOutlineColor(Color::White);
-    double rotation = asteroidVec.at(asterID).getAsteroidShape().getRotation();
-    Vector2f position = asteroidVec.at(asterID).getAsteroidShape().getPosition();
+    /*if(asteroidVec.at(asterID)._size > 0.25) {
+        vector<Asteroid> newAsteroids;
 
-    if (rotation > 270) {
-        asteroid1.getAsteroidShape().setRotation(rotation - 270);
-        asteroid2.getAsteroidShape().setRotation(rotation - 90);
-    } else if (rotation < 90) {
-        asteroid1.getAsteroidShape().setRotation(rotation + 90);
-        asteroid2.getAsteroidShape().setRotation(rotation + 270);
-    } else {
-        asteroid1.getAsteroidShape().setRotation(rotation + 90);
-        asteroid2.getAsteroidShape().setRotation(rotation - 90);
-    }
+        double rotation = asteroidVec.at(asterID).getAsteroidShape().getRotation();
+        Vector2f position = asteroidVec.at(asterID).getAsteroidShape().getPosition();
 
-    asteroid1.getAsteroidShape().setPosition(position);
-    asteroid2.getAsteroidShape().setPosition(position);
+        Asteroid asteroid1(.5 * asteroidVec.at(asterID)._velocity, .5 * asteroidVec.at(asterID)._size, rotation - 270, position);
+        Asteroid asteroid2(.5 * asteroidVec.at(asterID)._velocity, .5 * asteroidVec.at(asterID)._size, rotation + 90, position);
 
-    asteroidVec.push_back(asteroid1);
-    asteroidVec.push_back(asteroid2);
+        //asteroid1.getAsteroidShape().setOutlineColor(Color::White);
+        //asteroid2.getAsteroidShape().setOutlineColor(Color::White);
 
+        if (rotation > 270) {
+            asteroid1.getAsteroidShape().setRotation(rotation - 270);
+            asteroid2.getAsteroidShape().setRotation(rotation - 90);
+        } else if (rotation < 90) {
+            asteroid1.getAsteroidShape().setRotation(rotation + 90);
+            asteroid2.getAsteroidShape().setRotation(rotation + 270);
+        } else {
+            asteroid1.getAsteroidShape().setRotation(rotation + 90);
+            asteroid2.getAsteroidShape().setRotation(rotation - 90);
+        }
+
+        asteroidVec.push_back(asteroid1);
+        asteroidVec.push_back(asteroid2);
+    }*/
     asteroidVec.erase(asteroidVec.begin() + asterID);
 
 }

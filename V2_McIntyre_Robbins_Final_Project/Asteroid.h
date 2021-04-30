@@ -15,7 +15,7 @@ using namespace std;
 class Asteroid {
 public:
     Asteroid();
-    Asteroid(double velocity, int size);
+    Asteroid(double velocity, int size, double rotation, Vector2f position);
     void draw(RenderTarget& target, RenderStates states) const;
     void updateAsteroid(double frametime);
     void createAsteroid();

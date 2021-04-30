@@ -133,7 +133,6 @@ void Player::collision(vector<Asteroid>& asteroidVec, int asterID) {
     if ( ( shipPosX > 0 || shipPosX < game.getDimensions().x ) && ( shipPosY > 0 || shipPosY < game.getDimensions().y )) {
         if (asteroidVec.at(asterID).getAsteroidShape().getOutlineColor() == Color::White) {
             if (distanceShipToAsteroid <= ( radius + asteroidVec.at(asterID).getRadius() ) ) {
-                //initiateCol = true;
                 asteroidVec.at(asterID).fragmentation(asteroidVec, asterID);
                 if(lives > 0) {
                     lives--;

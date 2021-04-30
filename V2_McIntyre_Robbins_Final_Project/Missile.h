@@ -17,7 +17,7 @@ public:
     void isShot(Player ship);
     vector<CircleShape> getMissileVector();
     void updateMissile(Player player);
-    void hitsAsteroid(vector<Asteroid>& asteroidVec, int& asterInc);
+    void hitsAsteroid(vector<Asteroid>& asteroidVec, int asterID);
 private:
     CircleShape _missile;
     Vector2f _speed;

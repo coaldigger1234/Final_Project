@@ -6,6 +6,7 @@
 using namespace std;                            // using the standard namespace
 #include <random>
 #include <ctime>
+#include <string>
 
 #include <SFML/Graphics.hpp>                    // include the SFML Graphics Library
 #include "Asteroid.h"
@@ -34,15 +35,22 @@ int GameManager::startGame() {
     Clock clock;
     Asteroid setAst;
     vector<Player> currPlayerState;
+    Font myFont;
     int numAsteroid = ( (double)rand() / RAND_MAX * 8 + 3 ) * ( ( WIDTH * HEIGHT ) / ( 640 * 640 ) );
+
+    Asteroid placeholderAst;
+    placeholderAst.changeColor();
+    asteroidVec.push_back(placeholderAst);
+    asteroidVec.push_back(placeholderAst);
+    asteroidVec.push_back(placeholderAst);
+
     for (int fillAstVec = 0; fillAstVec < numAsteroid; ++fillAstVec) {
         Asteroid fillerAsteroid;
         asteroidVec.push_back(fillerAsteroid);
     }
 
-
     while(running){
-        Font myFont;
+
         if (!myFont.loadFromFile("arial.ttf")) {
             cerr << "An error has occurred" << endl;
             return -1;
@@ -106,7 +114,46 @@ int GameManager::startGame() {
         livesText.setString("Lives Left: " + to_string(player.getLives()));
         livesText.setCharacterSize(40);
         livesText.setFillColor(Color::White);
+
         window.draw(livesText);
+
+        Text winText;
+        winText.setPosition(Vector2f(WIDTH/3,HEIGHT/3));
+        winText.setFont(myFont);
+        winText.setString("You Win!");
+        winText.setCharacterSize(80);
+        winText.setFillColor(Color::White);
+
+        if(asteroidVec.size()-3 == 0) {
+            window.draw(winText);
+        }
+
+        window.display();
+
+        if(player.getLives() <= 0) {
+            running = false;
+        }
+    }
+
+    while(!running){
+        Event event;
+        while( window.pollEvent(event) ) {      // ask the window if any events occurred
+            if (event.type == Event::Closed) { // if event type is a closed event
+                // i.e. they clicked the X on the window
+                window.close();             // then close our window
+                running = false;
+            }
+        }
+        window.clear();
+
+        Text loseText;
+        loseText.setPosition(Vector2f(WIDTH/3,HEIGHT/3));
+        loseText.setFont(myFont);
+        loseText.setString("Game Over!");
+        loseText.setCharacterSize(80);
+        loseText.setFillColor(Color::White);
+
+        window.draw(loseText);
 
         window.display();
     }
