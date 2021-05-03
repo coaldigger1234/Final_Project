@@ -1,31 +1,35 @@
-//
-// Created by Owner on 4/19/2021.
-//
-#include "GameManager.h"
+/* CSCI261 Final Project
+ *
+ * Authors: Geoffrey McIntyre (Sec E) and Cole Robbins (Sec C)
+ *
+ * Description: This code allows users to play asteroids using SFML
+ */
+
 #include <iostream> // for standard input/output
 #include <fstream>
-using namespace std;                            // using the standard namespace
-#include <random>
 #include <ctime>
 #include <string>
 
-#include <SFML/Graphics.hpp>                    // include the SFML Graphics Library
-#include "Asteroid.h"
+#include "GameManager.h"
 #include "Player.h"
 #include "Missile.h"
 
-using namespace sf;
+using namespace sf; // using the sf namespace
+using namespace std; // using the standard namespace
 
+//Default Constructor
 GameManager::GameManager() {
     running = true;
     hasWon = false;
     isAlive = true;
 }
 
+//Gets window dimensions
 Vector2f GameManager::getDimensions() {
     return Vector2f(WIDTH, HEIGHT);
 }
 
+//Code that manages the game while running
 int GameManager::startGame() {
     srand(time(0));
     rand();
@@ -39,9 +43,11 @@ int GameManager::startGame() {
     Font myFont;
     bool firstKeyHasPressed = false;
 
+    //Opens and reads winning streak score file
     ifstream inFS("score.txt");
 
     if(inFS.fail()){
+        //If file fails to open (doesn't exist) make a new file
         ofstream outFS("score.txt");
         cout << "No file found. File created" << endl;
         outFS << 0;
@@ -49,17 +55,21 @@ int GameManager::startGame() {
         highscore = 0;
     }
 
+    //Save highscore value
     inFS >> highscore;
     inFS.close();
 
-    int numAsteroid = ( (double)rand() / RAND_MAX * 8 + 3 ) * ( ( WIDTH * HEIGHT ) / ( 640 * 640 ) );
+    //Randomizes number of asteroids based on the window size
+    int numAsteroid = ( (double)rand() / RAND_MAX * 8 + 3 ) * ( ( WIDTH * HEIGHT ) / ( 920 * 920 ) );
 
+    //Add three invisible asteroids for placeholders to keep vector sizing errors from happening
     Asteroid placeholderAst;
     placeholderAst.changeColor();
     asteroidVec.push_back(placeholderAst);
     asteroidVec.push_back(placeholderAst);
     asteroidVec.push_back(placeholderAst);
 
+    //Generate the asteroid vector
     for (int fillAstVec = 0; fillAstVec < numAsteroid; ++fillAstVec) {
         Asteroid fillerAsteroid;
         asteroidVec.push_back(fillerAsteroid);
@@ -67,15 +77,18 @@ int GameManager::startGame() {
 
     while(running) {
 
+        //Load font
         if (!myFont.loadFromFile("arial.ttf")) {
             cerr << "An error has occurred" << endl;
             return -1;
         }
 
+        //Wait for events
         Event event;
         while (window.pollEvent(event)) {      // ask the window if any events occurred
             if (event.type == Event::Closed) { // if event type is a closed event
                 // i.e. they clicked the X on the window
+                //If in the winning state when window closes
                 if(hasWon) {
                     ofstream outFS("score.txt");
                     if(outFS.fail()){
@@ -84,6 +97,7 @@ int GameManager::startGame() {
                     outFS << highscore + 1;
                     outFS.close();// then close our window
                 }
+                //if in the losing state when window closes
                 if(!isAlive){
                     ofstream outFS("score.txt");
                     if(outFS.fail()){
@@ -95,10 +109,11 @@ int GameManager::startGame() {
                 window.close();
                 running = false;
             }
+            //While alive, check for keyboard input
             if (isAlive) {
                 if (event.type == Event::KeyPressed) {
                     switch (event.key.code) {
-                        case sf::Keyboard::Space:
+                        case sf::Keyboard::Space: //Draw missiles when spacebar is pressed
                             if (missileVec.size() > 2) {
                                 missileVec.erase(missileVec.begin() + 0);
                                 currPlayerState.erase(currPlayerState.begin() + 0);
@@ -114,6 +129,7 @@ int GameManager::startGame() {
             player.onEvent(event, firstKeyHasPressed);
         }
 
+        //Update the game objects while player is alive
         if(isAlive) {
             window.clear(Color::Black);
 
@@ -141,15 +157,18 @@ int GameManager::startGame() {
 
             window.draw(player);
 
+            //Draw the asteroids
             for (int i = 0; i < asteroidVec.size(); ++i) {
                 window.draw(asteroidVec.at(i).getAsteroidShape());
             }
 
+            //Handle player collisions with Asteroid
             for (int j = 0; j < asteroidVec.size(); ++j) {
                 asteroidVec.at(j).updateAsteroid(time);
                 player.collision(asteroidVec, j);
             }
 
+            //Display lives on screen
             Text livesText;
             livesText.setFont(myFont);
             livesText.setString("Lives Left: " + to_string(player.getLives()));
@@ -176,16 +195,18 @@ int GameManager::startGame() {
                 displayStreak >> streak;
                 winText.setString("\t\t You Win! \nWinning Streak: " + to_string(++streak));
                 window.draw(winText);
+                displayStreak.close();
             }
 
             window.display();
 
+            //Break the loop if player runs out of lives
             if (player.getLives() <= 0) {
                 isAlive = false;
             }
 
         } else {
-
+            //Draw Losing screen
             window.clear();
 
             Text loseText;

@@ -1,6 +1,9 @@
-//
-// Created by Owner on 4/19/2021.
-//
+/* CSCI261 Final Project
+ *
+ * Authors: Geoffrey McIntyre (Sec E) and Cole Robbins (Sec C)
+ *
+ * Description: This code allows users to play asteroids using SFML
+ */
 
 #ifndef SFML_TEMPLATE_GAMEMANAGER_H
 #define SFML_TEMPLATE_GAMEMANAGER_H
@@ -24,7 +27,7 @@ public:
     void setAsteroidVec(vector<Asteroid> newAsteroidVec);
 private:
     void drawWindow();
-    int highscore;
+    int highscore{};
     RenderWindow window;
     bool running;
     bool isAlive;

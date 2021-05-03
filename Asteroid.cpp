@@ -1,21 +1,24 @@
-//
-// Created by Owner on 4/19/2021.
-//
+/* CSCI261 Final Project
+ *
+ * Authors: Geoffrey McIntyre (Sec E) and Cole Robbins (Sec C)
+ *
+ * Description: This code allows users to play asteroids using SFML
+ */
 
-#include "Asteroid.h"
-#include <random>
-#include <ctime>
-#include <SFML/Graphics.hpp>
 #include <cmath>
 #include <iostream>
-#include "GameManager.h"
-using namespace sf;
-using namespace std;
 
+#include "GameManager.h"
+
+using namespace sf; // using the sf namespace
+using namespace std; // using the standard namespace
+
+//Default Constructor
 Asteroid::Asteroid() {
     createAsteroid();
 }
 
+//Create a custom asteroid
 Asteroid::Asteroid(double velocity, int size, double rotation, Vector2f position ) {
     GameManager game;
     _velocity = velocity;
@@ -37,6 +40,7 @@ Asteroid::Asteroid(double velocity, int size, double rotation, Vector2f position
     asteroidShape.setPoint(6, Vector2f(-40.0f * _size, 0.0f * _size));
 }
 
+//Create an Asteroid
 void Asteroid::createAsteroid() {
     GameManager game;
     _velocity = (double)rand() / RAND_MAX * 7 + 2;
@@ -56,11 +60,9 @@ void Asteroid::createAsteroid() {
     asteroidShape.setPoint(4, Vector2f(-30.0f * _size, -40.0f * _size));
     asteroidShape.setPoint(5, Vector2f(-20.0f * _size, -20.0f * _size));
     asteroidShape.setPoint(6, Vector2f(-40.0f * _size, 0.0f * _size));
-
-    //cout << _size << endl;
-
 }
 
+//Update asteroid position/rotation
 void Asteroid::updateAsteroid(double frametime) {
     const double CONVERT_TO_RAD = 0.0174533;
     _angle = asteroidShape.getRotation();
@@ -73,6 +75,7 @@ void Asteroid::updateAsteroid(double frametime) {
 
     _position = asteroidShape.getPosition();
 
+    //Handle asteroid window wrapping
     if (_position.x < 0 - _radius) {
         _position.x = game.getDimensions().x +  _radius;
         if (asteroidShape.getOutlineColor() == Color(0, 255, 0, 0)) {
@@ -103,22 +106,16 @@ void Asteroid::updateAsteroid(double frametime) {
     }
 
     asteroidShape.setPosition(_position);
-
-
-
     asteroidShape.move(_speed);
 
 }
 
-//void Asteroid::draw(RenderTarget& target, RenderStates states) const {
-//    states.transform *= asteroidShape.getTransform();
-//    target.draw(asteroidShape, states);
-//}
-
+//Fetch asteroid shape
 ConvexShape Asteroid::getAsteroidShape() {
     return asteroidShape;
 }
 
+//Returns a random vel/direction for the asteroid
 void Asteroid::randomVelAndDir() {
     if (asteroidShape.getRotation() > 180) {
         asteroidShape.setRotation( (double)rand() * 179 + 180);
@@ -129,49 +126,18 @@ void Asteroid::randomVelAndDir() {
     _velocity = (double)rand() / RAND_MAX * 7 + 2;
 }
 
+//Fetch asteroid radius
 double Asteroid::getRadius() {
     return _radius;
 }
 
+//Change asteroid outline color
 void Asteroid::changeColor() {
     asteroidShape.setOutlineColor(Color(0, 0, 0,0));
 }
 
-//void Asteroid::setNumAsteroid(int number) {
-//    numAsteroid = number;
-//}
-
-//int Asteroid::getNumAsteroid() {
-//    return numAsteroid;
-//}
-
+//Destroy the asteroid
 void Asteroid::fragmentation(vector<Asteroid>& asteroidVec, int asterID) {
-    /*if(asteroidVec.at(asterID)._size > 0.25) {
-        vector<Asteroid> newAsteroids;
-
-        double rotation = asteroidVec.at(asterID).getAsteroidShape().getRotation();
-        Vector2f position = asteroidVec.at(asterID).getAsteroidShape().getPosition();
-
-        Asteroid asteroid1(.5 * asteroidVec.at(asterID)._velocity, .5 * asteroidVec.at(asterID)._size, rotation - 270, position);
-        Asteroid asteroid2(.5 * asteroidVec.at(asterID)._velocity, .5 * asteroidVec.at(asterID)._size, rotation + 90, position);
-
-        //asteroid1.getAsteroidShape().setOutlineColor(Color::White);
-        //asteroid2.getAsteroidShape().setOutlineColor(Color::White);
-
-        if (rotation > 270) {
-            asteroid1.getAsteroidShape().setRotation(rotation - 270);
-            asteroid2.getAsteroidShape().setRotation(rotation - 90);
-        } else if (rotation < 90) {
-            asteroid1.getAsteroidShape().setRotation(rotation + 90);
-            asteroid2.getAsteroidShape().setRotation(rotation + 270);
-        } else {
-            asteroid1.getAsteroidShape().setRotation(rotation + 90);
-            asteroid2.getAsteroidShape().setRotation(rotation - 90);
-        }
-
-        asteroidVec.push_back(asteroid1);
-        asteroidVec.push_back(asteroid2);
-    }*/
     asteroidVec.erase(asteroidVec.begin() + asterID);
 
 }

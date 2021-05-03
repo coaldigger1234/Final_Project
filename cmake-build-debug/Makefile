@@ -67,10 +67,10 @@ RM = "C:\Program Files\JetBrains\CLion 2020.3.1\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\Owner\Downloads\Documents\_School\_Senior_Year\_Spring_2021\CSCI_261\Final_Project\Hybrid_McIntyre_Robbins_Final_Project
+CMAKE_SOURCE_DIR = C:\Users\macge\Documents\Final_Project
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\Owner\Downloads\Documents\_School\_Senior_Year\_Spring_2021\CSCI_261\Final_Project\Hybrid_McIntyre_Robbins_Final_Project\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\macge\Documents\Final_Project\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -99,9 +99,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Owner\Downloads\Documents\_School\_Senior_Year\_Spring_2021\CSCI_261\Final_Project\Hybrid_McIntyre_Robbins_Final_Project\cmake-build-debug\CMakeFiles C:\Users\Owner\Downloads\Documents\_School\_Senior_Year\_Spring_2021\CSCI_261\Final_Project\Hybrid_McIntyre_Robbins_Final_Project\cmake-build-debug\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\macge\Documents\Final_Project\cmake-build-debug\CMakeFiles C:\Users\macge\Documents\Final_Project\cmake-build-debug\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Owner\Downloads\Documents\_School\_Senior_Year\_Spring_2021\CSCI_261\Final_Project\Hybrid_McIntyre_Robbins_Final_Project\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\macge\Documents\Final_Project\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -168,33 +168,6 @@ Asteroid.s: Asteroid.cpp.s
 Asteroid.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SFML_Template.dir\build.make CMakeFiles/SFML_Template.dir/Asteroid.cpp.s
 .PHONY : Asteroid.cpp.s
-
-FragmentationExecution.obj: FragmentationExecution.cpp.obj
-
-.PHONY : FragmentationExecution.obj
-
-# target to build an object file
-FragmentationExecution.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\SFML_Template.dir\build.make CMakeFiles/SFML_Template.dir/FragmentationExecution.cpp.obj
-.PHONY : FragmentationExecution.cpp.obj
-
-FragmentationExecution.i: FragmentationExecution.cpp.i
-
-.PHONY : FragmentationExecution.i
-
-# target to preprocess a source file
-FragmentationExecution.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\SFML_Template.dir\build.make CMakeFiles/SFML_Template.dir/FragmentationExecution.cpp.i
-.PHONY : FragmentationExecution.cpp.i
-
-FragmentationExecution.s: FragmentationExecution.cpp.s
-
-.PHONY : FragmentationExecution.s
-
-# target to generate assembly for a file
-FragmentationExecution.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\SFML_Template.dir\build.make CMakeFiles/SFML_Template.dir/FragmentationExecution.cpp.s
-.PHONY : FragmentationExecution.cpp.s
 
 GameManager.obj: GameManager.cpp.obj
 
@@ -316,9 +289,6 @@ help:
 	@echo ... Asteroid.obj
 	@echo ... Asteroid.i
 	@echo ... Asteroid.s
-	@echo ... FragmentationExecution.obj
-	@echo ... FragmentationExecution.i
-	@echo ... FragmentationExecution.s
 	@echo ... GameManager.obj
 	@echo ... GameManager.i
 	@echo ... GameManager.s

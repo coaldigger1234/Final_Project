@@ -1,1 +1,1 @@
--IC:/mingw/include -IC:/mingw64/include -IC:/mingw64/mingw64/include -IC:/mingw64/x86_64-w64-mingw32/include 
+-IC:/mingw/include -IC:/mingw64/include -IC:/mingw64/mingw64/include 

@@ -1,6 +1,9 @@
-//
-// Created by Owner on 4/26/2021.
-//
+/* CSCI261 Final Project
+ *
+ * Authors: Geoffrey McIntyre (Sec E) and Cole Robbins (Sec C)
+ *
+ * Description: This code allows users to play asteroids using SFML
+ */
 
 #ifndef SFML_TEMPLATE_MISSILE_H
 #define SFML_TEMPLATE_MISSILE_H

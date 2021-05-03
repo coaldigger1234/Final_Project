@@ -63,10 +63,10 @@ RM = "C:\Program Files\JetBrains\CLion 2020.3.1\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\Owner\Downloads\Documents\_School\_Senior_Year\_Spring_2021\CSCI_261\Final_Project\Hybrid_McIntyre_Robbins_Final_Project
+CMAKE_SOURCE_DIR = C:\Users\macge\Documents\Final_Project
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\Owner\Downloads\Documents\_School\_Senior_Year\_Spring_2021\CSCI_261\Final_Project\Hybrid_McIntyre_Robbins_Final_Project\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\macge\Documents\Final_Project\cmake-build-debug
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -93,14 +93,14 @@ clean: CMakeFiles/SFML_Template.dir/clean
 CMakeFiles/SFML_Template.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SFML_Template.dir\build.make CMakeFiles/SFML_Template.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SFML_Template.dir\build.make CMakeFiles/SFML_Template.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\Owner\Downloads\Documents\_School\_Senior_Year\_Spring_2021\CSCI_261\Final_Project\Hybrid_McIntyre_Robbins_Final_Project\cmake-build-debug\CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target SFML_Template"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\macge\Documents\Final_Project\cmake-build-debug\CMakeFiles --progress-num=1,2,3,4,5,6 "Built target SFML_Template"
 .PHONY : CMakeFiles/SFML_Template.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/SFML_Template.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Owner\Downloads\Documents\_School\_Senior_Year\_Spring_2021\CSCI_261\Final_Project\Hybrid_McIntyre_Robbins_Final_Project\cmake-build-debug\CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\macge\Documents\Final_Project\cmake-build-debug\CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/SFML_Template.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Owner\Downloads\Documents\_School\_Senior_Year\_Spring_2021\CSCI_261\Final_Project\Hybrid_McIntyre_Robbins_Final_Project\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\macge\Documents\Final_Project\cmake-build-debug\CMakeFiles 0
 .PHONY : CMakeFiles/SFML_Template.dir/rule
 
 # Convenience name for target.
